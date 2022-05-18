@@ -46,14 +46,34 @@ body {
 
 .wrap {
     position: relative;
-    max-width: 380px;
+    max-width: 360px;
     width: 100%;
     padding: 25px 30px;
-    background: linear-gradient(to right, #000000, #434343);
+    background: #000;
     box-shadow: 1px 2px 6px var(--lightshadow);
     border-radius: 12px;
     opacity: .9;
     overflow: hidden;
+    z-index: 100;
+}
+
+.wrap::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    width: 95%;
+    height: 96%;
+    background: #ffffff;
+    border-radius: 12px;
+    /* background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%); */
+    /* background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%); */
+    /* background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%); */
+    background-image: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);
+    box-shadow: 1px 2px 6px var(--lightshadow);
+    z-index: -1;
+    animation: backgroundMove 5s 2s infinite;
+    transition: 1s all ease-in-out;
 }
 
 .wrap i {
@@ -78,13 +98,13 @@ body {
     position: absolute;
     width: 160px;
     height: 25px;
-    background: linear-gradient(to left, #000000, #434343);
+    background: #000;
     top: -25px;
     left: 50%;
     transform: translate(-50%, 0);
     border-bottom-left-radius: 18px;
     border-bottom-right-radius: 18px;
-    opacity: .9;
+    opacity: 1;
 }
 
 .top-bar i {
@@ -103,7 +123,7 @@ body {
     margin: 12px auto;
     height: 256px;
     max-height: 100%;
-    width: 100%;
+    max-width: 280px;
     background: #000;
     box-shadow: 0 2px 8px var(--lightshadow);
     overflow: hidden;
@@ -215,7 +235,7 @@ body {
     justify-content: center;
     width: 54px;
     height: 54px;
-    background: rgba(255, 245, 251, .15);
+    background: rgba(0, 0, 0, 0.15);
     border-radius: 50%;
     box-shadow: 0px 0px 6px rgba(255, 255, 255, .78);
     transition: .5s all ease-in-out;
