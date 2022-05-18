@@ -6,7 +6,7 @@ const wrap = document.querySelector(".wrap"),
   Music = wrap.querySelector("#main-audio"),
   pauseBtn = wrap.querySelector(".play-pause");
 
-let musicIndex = 2;
+let musicIndex = 3;
 
 window.addEventListener("load", () => {
   loadMusic(musicIndex);
@@ -15,8 +15,8 @@ window.addEventListener("load", () => {
 function loadMusic(indexNumb) {
   Name.innerText = musicAll[indexNumb - 1].name;
   Artist.innerText = musicAll[indexNumb - 1].artist;
-  Img.src = `../img/${musicAll[indexNumb - 1].img}.jpg`;
-  Music.src = `../mp3/${musicAll[indexNumb - 1].src}.mp3`;
+  Img.src = `img/${musicAll[indexNumb - 1].img}.jpg`;
+  Music.src = `mp3/${musicAll[indexNumb - 1].src}.mp3`;
 }
 
 // play music
