@@ -10,7 +10,7 @@
 
 @keyframes backgroundMove {
     from {
-        transform: rotateZ(10deg);
+        /* transform: rotateZ(10deg); */
         background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
     }
 

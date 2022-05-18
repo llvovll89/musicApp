@@ -22,12 +22,15 @@ function loadMusic(indexNumb) {
 // play music
 function playMusic() {
   wrap.classList.add("paused");
+  pauseBtn.querySelector('i').innerText = "pause";
   Music.play();
 }
 
 // pause music
 function pauseMusic() {
     wrap.classList.remove("paused");
+    pauseBtn.querySelector('i').innerText = "play_arrow";
+
     Music.pause();
   }
   
