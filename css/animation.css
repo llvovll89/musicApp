@@ -1,0 +1,9 @@
+@keyframes circleMove {
+    from {
+        transform: rotateZ(-180deg);
+    }
+
+    to {
+        transform: rotateZ(180deg);
+    }
+}

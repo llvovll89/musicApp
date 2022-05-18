@@ -1,0 +1,314 @@
+/* google-font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+/* import */
+@import './animation.css';
+
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-main: #bfbfbf;
+    --background-inside: whitesmoke;
+    --backgounrd-temp: linear-gradient(90deg, #3e3e3e 0%, #030303 100%);
+    --lightshadow: rgba(0, 0, 0, 0.35);
+    --lightblack: #515C6F;
+    --pinkshadow: #ffcbdd;
+    --whiteColor: #ffffff;
+    --fontNanum: 'Nanum Gothic', sans-serif;
+}
+
+img {
+    image-rendering: -webkit-optimize-contrast;
+    backface-visibility: hidden;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+body {
+    /* background: rgba(0, 0, 0, 0.35); */
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.wrap {
+    position: relative;
+    max-width: 380px;
+    width: 100%;
+    padding: 25px 30px;
+    background: linear-gradient(to right, #000000, #434343);
+    box-shadow: 1px 2px 6px var(--lightshadow);
+    border-radius: 12px;
+    opacity: .9;
+    overflow: hidden;
+}
+
+.wrap i {
+    cursor: pointer;
+}
+
+.top-bar, .progress-area .timer, .controls,
+.music-list .header, .music-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 6px 0; */
+}
+
+.top-bar {
+    position: relative;
+    padding: 20px 0;
+}
+
+.top-bar::before {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 25px;
+    background: linear-gradient(to left, #000000, #434343);
+    top: -25px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    opacity: .9;
+}
+
+.top-bar i {
+    font-size: 30px;
+    color: var(--lightblack);
+}
+
+.top-bar span {
+    font-size: 18px;
+    color: var(--whiteColor);
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.img-area {
+    margin: 12px auto;
+    height: 256px;
+    max-height: 100%;
+    width: 100%;
+    background: #000;
+    box-shadow: 0 2px 8px var(--lightshadow);
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.img-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.song-details {
+    text-align: center;
+    margin: 26px auto;
+    color: var(--lightblack);
+    font-weight: 600;
+}
+
+.song-details .name {
+    font-size: 125%;
+    letter-spacing: 1px;
+    color: var(--whiteColor);
+    font-weight: 300;
+}
+
+.song-details .artist {
+    font-size: 105%;
+    letter-spacing: 1px;
+    opacity: .9;
+    color: var(--whiteColor);
+    font-weight: 300;
+}
+
+.progress-area {
+    height: 6px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.progress-area .progress-bar {
+    position: relative;
+    height: inherit;
+    width: 50%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #ff74a4 0%, #9f6ea3 100%);
+}
+
+.progress-bar::before {
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background: #000;
+    border-radius: inherit;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -5px;
+    background: inherit;
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+
+.progress-area:hover .progress-bar::before {
+    opacity: 1;
+}
+
+.progress-area .timer {
+    margin-top: 2px;
+    color: #ffffff;
+    opacity: .6;
+}
+
+.timer span {
+    font-size: 82.5%;
+    color: var(--lightblack);
+}
+
+.controls {
+    margin: 40px 0 5px 0;
+}
+
+.controls i {
+    color: #ffffff;
+    opacity: .6;
+    user-select: none;
+}
+
+.controls i:nth-child(2),
+.controls i:nth-child(4) {
+    font-size: 32px;
+}
+
+.controls #prev {
+    margin-right: -13px;
+    opacity: 1;
+}
+
+.controls #next {
+    margin-left: -13px;
+    opacity: 1;
+}
+
+.controls .play-pause {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    background: rgba(255, 245, 251, .15);
+    border-radius: 50%;
+    box-shadow: 0px 0px 6px rgba(255, 255, 255, .78);
+    transition: .5s all ease-in-out;
+}
+
+.play-pause i {
+    opacity: 1;
+}
+
+.play-pause:hover i {
+    transform: scale(.88);
+    transition: .5s all ease-in-out;
+    animation: circleMove 1s;
+}
+
+.music-list {
+    position: absolute;
+    width: 100%;
+    padding: 14px 28px;
+    left: 0;
+    bottom: -55%;
+    background: var(--background-inside);
+    border-radius: 14px;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+    color: var(--lightblack);
+    opacity: 0;
+    pointer-events: none;
+    transition: all .2s ease-out;
+}
+
+/* js 구현 */
+.music-list.show {
+    bottom: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.music-list .header {
+    padding: 12px 8px;
+    border-radius: 12px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.music-list .header .row {
+    display: flex;
+    align-items: center;
+    font-size: 19px;
+    color: var(--lightblack);
+}
+
+.header .row i {
+    cursor: default;
+}
+
+.header .row span {
+    margin-left: 5px;
+}
+
+.header #close {
+    font-size: 22px;
+    color: var(--lightblack);
+}
+
+.music-list ul {
+    margin: 10px auto;
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.music-list ul::-webkit-scrollbar {
+    width: 0;
+}
+
+.music-list ul li {
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #e5e5e5;
+    color: var(--lightblack);
+    cursor: pointer;
+}
+
+.music-list ul li:last-child {
+    border-bottom: 0px;
+}
+
+.music-listul ul li .row span {
+    font-size: 105.5%;
+}
+
+ul li .row p {
+    opacity: .9;
+}
+
+ul li .audio-duration {
+    font-size: 100%;
+}
