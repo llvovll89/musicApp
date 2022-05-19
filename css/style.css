@@ -1,6 +1,7 @@
 /* google-font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
 /* fonst */
 @font-face {
     font-family: 'GmarketSansMedium';
@@ -8,6 +9,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 /* import */
 @import './animation.css';
 
@@ -49,6 +51,8 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    height: -webkit-fill-available;
+    height: fill-available;
 }
 
 .wrap {
@@ -344,6 +348,6 @@ ul li.playing {
     color: salmon;
     pointer-events: none;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.15),
-    inset 0 0 2px rgba(0, 0, 0, 0.15);
+        inset 0 0 2px rgba(0, 0, 0, 0.15);
     border-radius: 12px;
 }
