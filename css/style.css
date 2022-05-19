@@ -1,6 +1,13 @@
 /* google-font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+/* fonst */
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 /* import */
 @import './animation.css';
 
@@ -33,7 +40,7 @@ ol, ul, li {
 
 body {
     /* background: rgba(0, 0, 0, 0.35); */
-    font-family: 'Poppins', sans-serif;
+    font-family: 'GmarketSansMedium';
     color: #ffffff;
 }
 
@@ -49,8 +56,8 @@ body {
     max-width: 360px;
     width: 100%;
     padding: 25px 30px;
-    background: #000;
-    box-shadow: 1px 2px 6px var(--lightshadow);
+    background: #030303;
+    box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.75);
     border-radius: 12px;
     opacity: .9;
     overflow: hidden;
@@ -85,7 +92,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* padding: 6px 0; */
 }
 
 .top-bar {
@@ -98,7 +104,7 @@ body {
     position: absolute;
     width: 160px;
     height: 25px;
-    background: #000;
+    background: #030303;
     top: -25px;
     left: 50%;
     transform: translate(-50%, 0);
@@ -169,7 +175,7 @@ body {
 .progress-area .progress-bar {
     position: relative;
     height: inherit;
-    width: 50%;
+    width: 0%;
     border-radius: inherit;
     background: linear-gradient(90deg, #ff74a4 0%, #9f6ea3 100%);
 }
@@ -253,9 +259,9 @@ body {
 
 .music-list {
     position: absolute;
-    width: 100%;
-    padding: 14px 28px;
-    left: 0;
+    width: 95%;
+    padding: 14px 20px;
+    left: 10px;
     bottom: -55%;
     background: var(--background-inside);
     border-radius: 14px;
@@ -331,4 +337,13 @@ ul li .row p {
 
 ul li .audio-duration {
     font-size: 100%;
+}
+
+ul li.playing {
+    padding: 10px;
+    color: salmon;
+    pointer-events: none;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.15),
+    inset 0 0 2px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
 }
