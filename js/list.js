@@ -2,14 +2,14 @@
 
 let musicAll = [
     {
-        name: "멋쟁이 토마토",
-        artist: "마스터 뚠식",
+        name: "MP 01",
+        artist: "노래대장 123",
         img: "img1",
         src: "music1",
     },
     {
-        name: "애교대장 뚠식이",
-        artist: "애교왕 김뚠식",
+        name: "MP 02",
+        artist: "노래대장 345",
         img: "img2",
         src: "music2",
     },
